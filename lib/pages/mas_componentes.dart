@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 import "package:flutter/material.dart";
-import "package:franky/pages/counter_screen.dart";
+//import "package:franky/pages/counter_screen.dart";
 
 class MuchosComponentes extends StatelessWidget {
   const MuchosComponentes({super.key});
@@ -17,7 +17,7 @@ class MuchosComponentes extends StatelessWidget {
                   color: Color.fromARGB(255, 144, 77, 189))),
         ),
         ListTile(
-          title: const Text('Single-Child',
+          title: const Text('Single-Child/Date-P/Form/Card',
               style: TextStyle(
                   //Para darle un formato al texto
                   fontSize: 40,
@@ -36,8 +36,15 @@ class MuchosComponentes extends StatelessWidget {
             );
           },
         ),
+        const ListTile(
+          title: Text('-------------------------------',
+              style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.w200,
+                  color: Color.fromARGB(255, 144, 77, 189))),
+        ),
         ListTile(
-          title: const Text('Radio',
+          title: const Text('Radio-B',
               style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.w200,
@@ -47,21 +54,6 @@ class MuchosComponentes extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => const RadioExample(),
-              ),
-            );
-          },
-        ),
-        ListTile(
-          title: const Text('Escoge la Fecha',
-              style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.w200,
-                  color: Color.fromARGB(255, 144, 77, 189))),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const DatePickerApp(),
               ),
             );
           },
@@ -140,7 +132,7 @@ class SingleChildScrollViewExampleWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Single-Child/Card/Form'),
+        title: const Text('Single-Child/DateP/Form/Card'),
       ),
       body: const Center(
         child: SingleChildScrollViewExample(),
@@ -168,27 +160,26 @@ class SingleChildScrollViewExample extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
                   Container(
-                    // A fixed-height child.
-                    color: const Color.fromARGB(255, 137, 98, 146),
-                    height: 200.0,
+                    // Another fixed-height child.
+                    color: Color.fromARGB(255, 128, 123, 155),
+                    height: 500.0,
                     alignment: Alignment.center,
-                    child: const CardExampleWidget(),
+                    child: const DatePickerApp(),
                   ),
                   Container(
                     // Another fixed-height child.
                     color: const Color.fromARGB(255, 112, 102, 161),
-                    height: 200.0,
+                    height: 300.0,
                     alignment: Alignment.center,
                     child: const FormExampleApp(),
                   ),
-
-                  // Container(
-                  //   // Another fixed-height child.
-                  //   color: Color.fromARGB(255, 128, 123, 155),
-                  //   height: 200.0,
-                  //   alignment: Alignment.center,
-                  //   // child: const FormExampleApp(),
-                  // ),
+                  Container(
+                    // A fixed-height child.
+                    color: const Color.fromARGB(255, 137, 98, 146),
+                    height: 300.0,
+                    alignment: Alignment.center,
+                    child: const CardExampleWidget(),
+                  ),
                 ],
               ),
             ),
@@ -363,8 +354,8 @@ class _DatePickerExampleState extends State<DatePickerExample>
           restorationId: 'date_picker_dialog',
           initialEntryMode: DatePickerEntryMode.calendarOnly,
           initialDate: DateTime.fromMillisecondsSinceEpoch(arguments! as int),
-          firstDate: DateTime(2021),
-          lastDate: DateTime(2022),
+          firstDate: DateTime(2022),
+          lastDate: DateTime(2023),
         );
       },
     );
@@ -398,7 +389,6 @@ class _DatePickerExampleState extends State<DatePickerExample>
                 fontSize: 40,
                 fontWeight: FontWeight.w200,
                 color: Color.fromARGB(255, 100, 59, 128))),
-        actions: const <Widget>[AppBarCustom()],
       ),
       body: Center(
         child: OutlinedButton(

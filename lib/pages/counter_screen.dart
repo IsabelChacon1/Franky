@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import "package:franky/pages/mas_componentes.dart";
-import "package:franky/pages/navigation.dart";
+// import "package:franky/pages/mas_componentes.dart";
+// import "package:franky/pages/navigation.dart";
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key});
@@ -14,7 +14,7 @@ class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('---FRANKY---')),
+      appBar: AppBar(title: const Text('<- Drawer---FRANKY---')),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -110,30 +110,3 @@ class CustomButton extends StatelessWidget {
   }
 } //clase-constructor CustomButton
 
-class AppBarCustom extends StatelessWidget {
-  const AppBarCustom({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(Icons.navigate_before_outlined),
-      tooltip: 'Regresa',
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) {
-              return Scaffold(
-                appBar: AppBar(
-                  title: const Text(
-                      'Regresa, no volver a escoger la fecha pofavo'),
-                ),
-                body: const NavigationBarApp(),
-              );
-            },
-          ),
-        );
-      },
-    );
-  }
-}
